@@ -4,9 +4,7 @@
 - Возможность загружать несколько изображений в одном запросе.
 - Создание квадратного превью изображения размером 100px на 100px.
 
-
 Установка и запуск:
-
 rustup default nightly <br>
 git clone https://github.com/Split174/http_resize_img ~/testPopov <br>
 cd testPopov <br>
