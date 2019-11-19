@@ -8,7 +8,7 @@ use curl::easy::Easy;
 use std::ffi::OsStr;
 use rocket_contrib::serve::StaticFiles;
 use rocket_contrib::json::JsonValue;
-use std::fs::{File};
+use std::fs::{File, create_dir_all};
 use base64::encode;
 use image::FilterType;
 
@@ -47,6 +47,7 @@ fn get_link_image(urls : String) -> JsonValue {
 }
 
 fn main() {
+    create_dir_all("static");
     rocket::ignite()
         .mount("/", routes![get_link_image])
         .mount("/img100/", StaticFiles::from("static"))
